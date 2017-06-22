@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+	PATHS="/opt /usr/src"
+else
+	PATHS=$@
+fi
+
+for CURRENT_PATH in ${PATHS}; do
+	chown --recursive --quiet --preserve-root ${APP_USERNAME}:${APP_GROUPNAME} ${CURRENT_PATH}
+done

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [[ $# -eq 0 ]]; then
+	PATHS="/opt /usr/src"
+else
+	PATHS=$@
+fi
+
+for CURRENT_PATH in ${PATHS}; do
+	chmod --recursive --quiet --preserve-root a+rwXs ${CURRENT_PATH}
+done
