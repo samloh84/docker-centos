@@ -1,5 +1,7 @@
 #!/bin/bash
 
 yum update -y
-yum install -y $@
+if [[ $# -gt 0 ]]; then
+    yum install -y $@
+fi
 yum clean all
