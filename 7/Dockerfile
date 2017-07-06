@@ -21,7 +21,7 @@ COPY fix-permissions fix-ownership yum-install /usr/local/bin/
 RUN chmod a+rxs /usr/local/bin/fix-permissions \
 /usr/local/bin/fix-ownership \
 /usr/local/bin/yum-install && \
-yum-install git nano curl && \
+yum-install git nano curl openssl && \
 groupadd --gid ${APP_GID} ${APP_GROUPNAME} && \
 useradd --uid ${APP_UID} --gid ${APP_GID} \
 --create-home \
