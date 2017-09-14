@@ -1,7 +1,20 @@
 #!/bin/bash
 
-yum update -y
-if [[ $# -gt 0 ]]; then
-    yum install -y $@
-fi
+ACTION="install"
+case ${1} in
+	install)
+		ACTION="install"
+		shift
+	;;
+	update)
+		ACTION="update"
+		shift
+	;;
+	remove)
+		ACTION="remove"
+		shift
+	;;
+esac
+
+yum ${ACTION} -y $@
 yum clean all
