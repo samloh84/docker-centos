@@ -16,11 +16,12 @@ ENV HOME ${APP_USER_HOME}
 
 USER ${ROOT_UID}
 
-COPY fix-permissions fix-ownership yum-install /usr/local/bin/
+COPY scripts/fix-permissions scripts/fix-ownership scripts/yum-install scripts/import-ca-cert /usr/local/bin/
 
 RUN chmod a+rxs /usr/local/bin/fix-permissions \
 /usr/local/bin/fix-ownership \
-/usr/local/bin/yum-install && \
+/usr/local/bin/yum-install \
+/usr/local/bin/import-ca-cert && \
 yum-install git nano curl openssl && \
 groupadd --gid ${APP_GID} ${APP_GROUPNAME} && \
 useradd --uid ${APP_UID} --gid ${APP_GID} \
