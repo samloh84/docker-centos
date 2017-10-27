@@ -29,14 +29,14 @@ run:
 	DOCKER_RUN_ARGS+="--tty "; \
 	DOCKER_RUN_ARGS+="--interactive "; \
 	DOCKER_RUN_ARGS+="--rm "; \
-	if [[ ! -z "${http_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg http_proxy=${http_proxy} "; fi;  \
-	if [[ ! -z "${HTTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg HTTP_PROXY=${HTTP_PROXY} "; fi;  \
-	if [[ ! -z "${https_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg https_proxy=${https_proxy} "; fi;  \
-	if [[ ! -z "${HTTPS_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg HTTPS_PROXY=${HTTPS_PROXY} "; fi;  \
-	if [[ ! -z "${ftp_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg ftp_proxy=${ftp_proxy} "; fi;  \
-	if [[ ! -z "${FTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg FTP_PROXY=${FTP_PROXY} "; fi;  \
-	if [[ ! -z "${no_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg no_proxy=${no_proxy} "; fi;  \
-	if [[ ! -z "${NO_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg NO_PROXY=${NO_PROXY} "; fi;  \
+	if [[ ! -z "${http_proxy}" ]]; then DOCKER_RUN_ARGS+="--env http_proxy=${http_proxy} "; fi;  \
+	if [[ ! -z "${HTTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env HTTP_PROXY=${HTTP_PROXY} "; fi;  \
+	if [[ ! -z "${https_proxy}" ]]; then DOCKER_RUN_ARGS+="--env https_proxy=${https_proxy} "; fi;  \
+	if [[ ! -z "${HTTPS_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env HTTPS_PROXY=${HTTPS_PROXY} "; fi;  \
+	if [[ ! -z "${ftp_proxy}" ]]; then DOCKER_RUN_ARGS+="--env ftp_proxy=${ftp_proxy} "; fi;  \
+	if [[ ! -z "${FTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env FTP_PROXY=${FTP_PROXY} "; fi;  \
+	if [[ ! -z "${no_proxy}" ]]; then DOCKER_RUN_ARGS+="--env no_proxy=${no_proxy} "; fi;  \
+	if [[ ! -z "${NO_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env NO_PROXY=${NO_PROXY} "; fi;  \
 	DOCKER_RUN_ARGS+="--name $(CONTAINER_NAME) "; \
 	for TAG in $(TAGS); do IMAGE_NAME="$(REPOSITORY_NAME):$${TAG} "; break; done; \
 	sudo docker run $${DOCKER_RUN_ARGS} $${IMAGE_NAME}
@@ -47,14 +47,14 @@ bash:
 	DOCKER_RUN_ARGS+="--tty "; \
 	DOCKER_RUN_ARGS+="--interactive "; \
 	DOCKER_RUN_ARGS+="--rm "; \
-	if [[ ! -z "${http_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg http_proxy=${http_proxy} "; fi;  \
-	if [[ ! -z "${HTTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg HTTP_PROXY=${HTTP_PROXY} "; fi;  \
-	if [[ ! -z "${https_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg https_proxy=${https_proxy} "; fi;  \
-	if [[ ! -z "${HTTPS_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg HTTPS_PROXY=${HTTPS_PROXY} "; fi;  \
-	if [[ ! -z "${ftp_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg ftp_proxy=${ftp_proxy} "; fi;  \
-	if [[ ! -z "${FTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg FTP_PROXY=${FTP_PROXY} "; fi;  \
-	if [[ ! -z "${no_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg no_proxy=${no_proxy} "; fi;  \
-	if [[ ! -z "${NO_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg NO_PROXY=${NO_PROXY} "; fi;  \
+	if [[ ! -z "${http_proxy}" ]]; then DOCKER_RUN_ARGS+="--env http_proxy=${http_proxy} "; fi;  \
+	if [[ ! -z "${HTTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env HTTP_PROXY=${HTTP_PROXY} "; fi;  \
+	if [[ ! -z "${https_proxy}" ]]; then DOCKER_RUN_ARGS+="--env https_proxy=${https_proxy} "; fi;  \
+	if [[ ! -z "${HTTPS_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env HTTPS_PROXY=${HTTPS_PROXY} "; fi;  \
+	if [[ ! -z "${ftp_proxy}" ]]; then DOCKER_RUN_ARGS+="--env ftp_proxy=${ftp_proxy} "; fi;  \
+	if [[ ! -z "${FTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env FTP_PROXY=${FTP_PROXY} "; fi;  \
+	if [[ ! -z "${no_proxy}" ]]; then DOCKER_RUN_ARGS+="--env no_proxy=${no_proxy} "; fi;  \
+	if [[ ! -z "${NO_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env NO_PROXY=${NO_PROXY} "; fi;  \
 	DOCKER_RUN_ARGS+="--name $(CONTAINER_NAME) "; \
 	for TAG in $(TAGS); do IMAGE_NAME="$(REPOSITORY_NAME):$${TAG} "; break; done; \
 	sudo docker run $${DOCKER_RUN_ARGS} $${IMAGE_NAME} bash
@@ -65,14 +65,14 @@ sudo:
 	DOCKER_RUN_ARGS+="--tty "; \
 	DOCKER_RUN_ARGS+="--interactive "; \
 	DOCKER_RUN_ARGS+="--rm "; \
-	if [[ ! -z "${http_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg http_proxy=${http_proxy} "; fi;  \
-	if [[ ! -z "${HTTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg HTTP_PROXY=${HTTP_PROXY} "; fi;  \
-	if [[ ! -z "${https_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg https_proxy=${https_proxy} "; fi;  \
-	if [[ ! -z "${HTTPS_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg HTTPS_PROXY=${HTTPS_PROXY} "; fi;  \
-	if [[ ! -z "${ftp_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg ftp_proxy=${ftp_proxy} "; fi;  \
-	if [[ ! -z "${FTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg FTP_PROXY=${FTP_PROXY} "; fi;  \
-	if [[ ! -z "${no_proxy}" ]]; then DOCKER_RUN_ARGS+="--build-arg no_proxy=${no_proxy} "; fi;  \
-	if [[ ! -z "${NO_PROXY}" ]]; then DOCKER_RUN_ARGS+="--build-arg NO_PROXY=${NO_PROXY} "; fi;  \
+	if [[ ! -z "${http_proxy}" ]]; then DOCKER_RUN_ARGS+="--env http_proxy=${http_proxy} "; fi;  \
+	if [[ ! -z "${HTTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env HTTP_PROXY=${HTTP_PROXY} "; fi;  \
+	if [[ ! -z "${https_proxy}" ]]; then DOCKER_RUN_ARGS+="--env https_proxy=${https_proxy} "; fi;  \
+	if [[ ! -z "${HTTPS_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env HTTPS_PROXY=${HTTPS_PROXY} "; fi;  \
+	if [[ ! -z "${ftp_proxy}" ]]; then DOCKER_RUN_ARGS+="--env ftp_proxy=${ftp_proxy} "; fi;  \
+	if [[ ! -z "${FTP_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env FTP_PROXY=${FTP_PROXY} "; fi;  \
+	if [[ ! -z "${no_proxy}" ]]; then DOCKER_RUN_ARGS+="--env no_proxy=${no_proxy} "; fi;  \
+	if [[ ! -z "${NO_PROXY}" ]]; then DOCKER_RUN_ARGS+="--env NO_PROXY=${NO_PROXY} "; fi;  \
 	DOCKER_RUN_ARGS+="--name $(CONTAINER_NAME) "; \
 	DOCKER_RUN_ARGS+="--user 0 "; \
 	DOCKER_RUN_ARGS+="--privileged "; \
